@@ -50,7 +50,7 @@ app.get("/searchstudent", (req, res) => {
             throw err
         } else {
             if (results.length > 0) {
-                res.render("search", { mesg1: true, mesg2: false })
+                res.render("search", { mesg1: true, mesg2: false, data: results })
             } else {
                 res.render("search", { mesg1: false, mesg2: true })
             }
