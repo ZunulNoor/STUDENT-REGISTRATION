@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image" href="https://pngimg.com/d/mysql_PNG9.png">
+    <title>MySql Form</title>
+</head>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+        background-color: black;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 25px;
+    }
+
+    .main a {
+        color: whitesmoke;
+        text-decoration: none;
+        font-size: large;
+        font-family: 'Courier New', Courier, monospace;
+        font-style: bold;
+    }
+
+    .container {
+        background-color: black;
+        color: antiquewhite;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px auto;
+        width: 300px;
+    }
+
+    .container h3 {
+        text-align: center;
+    }
+
+    .container label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .container input[type="phone"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 5px;
+        color: antiquewhite;
+    }
+
+    .container button {
+        background-color: antiquewhite;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .container a {
+        color: antiquewhite;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <a href="/add">Add Student</a>
+        <a href="/search">Search Student</a>
+        <a href="/update">Update Student</a>
+        <a href="/delete">Delete Student</a>
+        <a href="/allStudents">All Students</a>
+    </div>
+    <div class="container">
+        <form action="/removestudent">
+            <h3>SEARCH STUDENT </h3>
+            <hr>
+            <label for=" phn"><b>Phone no</b></label>
+            <input type="phone" placeholder="Enter Phone Number" name="phone" id="" phone="required" required>
+            <button type="submit" class="registerbtn">DELETE STUDENT</button>
+            <a href="/" style="color:black">BACK TO HOME PAGE</a>
+            {{#if mesg1}}
+            <h3>Deleted!</h3>
+            {{/if}}
+            {{#if mesg2}}
+            <h3>InCorrect Phone Number</h3>
+            {{/if}}
+        </form>
+    </div>
+</body>
+
+</html>
